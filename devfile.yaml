@@ -17,6 +17,9 @@ components:
     image: 'registry.redhat.io/codeready-workspaces/plugin-java8-rhel8@sha256:ecaa9ddef5ca8db9552f1b5e66f7aacb19d72e488d718d8135b1e1d9f66a1a7a'
     memoryLimit: 512Mi
     mountSources: true
+    volumes:
+      - name: venv
+        containerPath: /home/jboss/.venv
     env:
       - name: VOTING_API_SERVICE_HOST
         value: 'vote-api'
