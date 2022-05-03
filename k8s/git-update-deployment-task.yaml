@@ -39,7 +39,7 @@ spec:
 
         BRANCH="$(params.GIT_REF)"
 
-        if [ "$(params.S_GIT_REF)" != "refs/heads/main" ]
+        if [ "$(params.S_GIT_REF)" != "refs/heads/master" ]
 
         then
 
