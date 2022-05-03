@@ -16,7 +16,7 @@ components:
   - id: redhat/fabric8-analytics/latest
     type: chePlugin
     preferences:
-      python.pythonPath: '/usr/bin/python"
+      python.pythonPath: '/usr/bin/python'
   - type: dockerimage
     alias: python
     image: 'registry.redhat.io/codeready-workspaces/plugin-java8-rhel8@sha256:ecaa9ddef5ca8db9552f1b5e66f7aacb19d72e488d718d8135b1e1d9f66a1a7a'
