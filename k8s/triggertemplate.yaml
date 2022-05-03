@@ -11,6 +11,7 @@ spec:
     - name: git-repo-name
     - name: content-type
     - name: pusher-name
+    - name: git-ref
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
@@ -27,7 +28,7 @@ spec:
           - name: GIT_REVISION
             value: $(tt.params.git-revision)
           - name: GIT_REF
-            value: ${tt.params.git-ref}
+            value: $(tt.params.git-ref)
         pipelineRef:
           name: vote-ui
         workspaces:

@@ -35,9 +35,9 @@ spec:
       name: git-clone
       resources: {}
       script: >
-        echo ${S_GIT_REF}
+        echo $(S_GIT_REF)
 
-        echo "${S_GIT_REF}"
+        echo "$(S_GIT_REF)"
 
         rm -rf git-update-digest-workdir
 

@@ -74,7 +74,7 @@ spec:
     - name: GIT_REF
       value: $(params.CONFIG_GIT_REVISION)
     - name: S_GIT_REF
-      value: ${params.GIT_REF}
+      value: $(params.GIT_REF)
     runAfter:
       - build-and-push
     taskRef:
