@@ -37,11 +37,11 @@ spec:
       script: >
         echo $(params.S_GIT_REF)
 
-        BRANCH = "$(params.GIT_REF)"
+        BRANCH="$(params.GIT_REF)"
 
         if [ "$(params.S_GIT_REF)" != "refs/heads/main" ]
         then
-          BRANCH = $(params.S_GIT_REF)
+          BRANCH=$(params.S_GIT_REF)
         fi
 
         rm -rf git-update-digest-workdir
