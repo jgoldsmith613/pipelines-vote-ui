@@ -43,7 +43,7 @@ spec:
 
         then
 
-          BRANCH=$(params.S_GIT_REF)
+          BRANCH="dave"
 
         fi
 
