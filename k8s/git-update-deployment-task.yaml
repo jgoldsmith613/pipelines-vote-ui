@@ -37,11 +37,16 @@ spec:
       script: >
         echo $(params.S_GIT_REF)
 
-        echo "$(params.S_GIT_REF)"
+        BRANCH = "$(params.GIT_REF)"
+
+        if [ "$(params.S_GIT_REF)" != "refs/heads/main" ]
+        then
+          BRANCH = $(params.S_GIT_REF)
+        fi
 
         rm -rf git-update-digest-workdir
 
-        git clone $(params.GIT_REPOSITORY) -b $(params.GIT_REF)
+        git clone $(params.GIT_REPOSITORY) -b $BRANCH
         git-update-digest-workdir
       workingDir: $(workspaces.workspace.path)
     - image: 'quay.io/wpernath/kustomize-ubi:latest'
