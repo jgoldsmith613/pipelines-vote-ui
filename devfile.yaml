@@ -13,6 +13,8 @@ components:
     preferences:
       python.globalModuleInstallation: true
       python.linting.flake8Enabled: true
+      python.linting.flake8Enabled: true
+      python.linting.pylintEnabled: false
   - id: redhat/fabric8-analytics/latest
     type: chePlugin
     preferences:
