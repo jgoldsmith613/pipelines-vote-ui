@@ -25,6 +25,8 @@ spec:
       type: string
     - name: KUSTOMIZATION_PATH
       type: string
+    - name: S_GIT_REF
+      type: string
   results:
     - description: The commit SHA
       name: commit
@@ -33,6 +35,10 @@ spec:
       name: git-clone
       resources: {}
       script: >
+        echo ${S_GIT_REF}
+
+        echo "${S_GIT_REF}"
+
         rm -rf git-update-digest-workdir
 
         git clone $(params.GIT_REPOSITORY) -b $(params.GIT_REF)

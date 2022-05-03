@@ -25,6 +25,9 @@ spec:
   - default: develop
     name: CONFIG_GIT_REVISION
     type: string
+  - default: refs/heads/main
+    name: GIT_REF
+    type: string
   tasks:
   - name: fetch-repository
     params:
@@ -70,6 +73,8 @@ spec:
       value: environments/dev
     - name: GIT_REF
       value: $(params.CONFIG_GIT_REVISION)
+    - name: S_GIT_REF
+      value: ${params.GIT_REF}
     runAfter:
       - build-and-push
     taskRef:
