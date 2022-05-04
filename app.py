@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, request, make_response, g, send_from_directory
+from flask import Flask, render_template, request, make_response, send_from_directory
 import os
 import socket
 import random
@@ -16,7 +16,7 @@ app = Flask(__name__)
 
 @app.route("/", methods=['POST','GET'])
 def hello():
-    rest_endpoint="http://" + os.environ["VOTING_API_SERVICE_HOST"] + ":" + os.environ["VOTING_API_SERVICE_PORT"]
+    rest_endpoint = "http://" + os.environ["VOTING_API_SERVICE_HOST"] + ":" + os.environ["VOTING_API_SERVICE_PORT"]
     voter_id = request.cookies.get('voter_id')
     if not voter_id:
         voter_id = hex(random.getrandbits(64))[2:-1]
